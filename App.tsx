@@ -1,45 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ConfigProvider, useConfig } from './src/config/ConfigContext';
+import { BookingsProvider } from './src/features/booking/BookingsContext';
+import { HomeSkeleton } from './src/features/home/HomeSkeleton';
+import { DosesProvider } from './src/features/prescriptions/DosesContext';
+import { RootNavigator } from './src/navigation/RootNavigator';
+import { ThemeProvider, useTheme } from './src/theme/ThemeContext';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+function AppContent() {
+  const theme = useTheme();
+  const { isReady } = useConfig();
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const lightIcons = theme.colors.onPrimary === theme.colors.surface;
 
   return (
+    <>
+      <StatusBar barStyle={lightIcons ? 'light-content' : 'dark-content'} />
+      {isReady ? <RootNavigator /> : <HomeSkeleton />}
+    </>
+  );
+}
+
+export default function App() {
+  return (
     <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+      <ConfigProvider>
+        <ThemeProvider>
+          <BookingsProvider>
+            <DosesProvider>
+              <AppContent />
+            </DosesProvider>
+          </BookingsProvider>
+        </ThemeProvider>
+      </ConfigProvider>
     </SafeAreaProvider>
   );
 }
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;

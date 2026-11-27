@@ -1,0 +1,205 @@
+{
+  "version": 12,
+  "theme": {
+    "primary": "#0A6B63",
+    "secondary": "#E3F4F0",
+    "background": "#F5F9F8",
+    "surface": "#FFFFFF",
+    "textPrimary": "#0F2A28",
+    "textSecondary": "#5A706D",
+    "accent": "#E8A317"
+  },
+  "tabs": [
+    { "id": "tab-home", "label": "Home", "icon": "home", "screen": "home" },
+    {
+      "id": "tab-bookings",
+      "label": "Bookings",
+      "icon": "calendar",
+      "screen": "bookings"
+    },
+    {
+      "id": "tab-rx",
+      "label": "Prescriptions",
+      "icon": "file-text",
+      "screen": "prescriptions"
+    },
+    {
+      "id": "tab-profile",
+      "label": "Profile",
+      "icon": "user",
+      "screen": "profile"
+    }
+  ],
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero_banner",
+      "background": { "kind": "gradient", "value": "#064E49,#12918A" },
+      "items": [
+        {
+          "greeting": "Namaste, Mahesh",
+          "subtitle": "How can we take care of your family today?"
+        }
+      ]
+    },
+    {
+      "id": "chips",
+      "type": "category_chips",
+      "background": { "kind": "color", "value": "#F5F9F8" },
+      "items": [
+        {
+          "id": "consult",
+          "label": "Consult",
+          "icon": "stethoscope",
+          "action": { "type": "doctors" }
+        },
+        {
+          "id": "lab",
+          "label": "Lab tests",
+          "icon": "flask",
+          "action": { "type": "soon" }
+        },
+        {
+          "id": "pharmacy",
+          "label": "Pharmacy",
+          "icon": "pill",
+          "action": { "type": "soon" }
+        },
+        {
+          "id": "vaccines",
+          "label": "Vaccines",
+          "icon": "syringe",
+          "action": { "type": "soon" }
+        }
+      ]
+    },
+    {
+      "id": "quick",
+      "type": "quick_actions",
+      "title": "Quick actions",
+      "background": { "kind": "color", "value": "#E3F4F0" },
+      "items": [
+        {
+          "id": "book",
+          "label": "Book",
+          "icon": "calendar",
+          "action": { "type": "doctors" }
+        },
+        {
+          "id": "rx",
+          "label": "Prescriptions",
+          "icon": "file-text",
+          "action": { "type": "tab", "screen": "prescriptions" }
+        },
+        {
+          "id": "reminders",
+          "label": "Reminders",
+          "icon": "clock",
+          "action": { "type": "tab", "screen": "prescriptions" }
+        },
+        {
+          "id": "family",
+          "label": "Family",
+          "icon": "users",
+          "action": { "type": "soon" }
+        }
+      ]
+    },
+    {
+      "id": "stories",
+      "type": "video_stories",
+      "background": { "kind": "color", "value": "#FFFFFF" },
+      "items": [{ "id": "s1" }]
+    },
+    {
+      "id": "services",
+      "type": "service_grid",
+      "title": "Popular services",
+      "columns": 2,
+      "background": { "kind": "color", "value": "#FFFFFF" },
+      "items": [
+        {
+          "id": "svc-general",
+          "name": "General consultation",
+          "priceInr": 300,
+          "badge": "Popular",
+          "doctorId": "d1",
+          "icon": "stethoscope",
+          "imageUrl": "https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=480&h=360&fit=crop"
+        },
+        {
+          "id": "svc-diabetes",
+          "name": "Diabetes care visit",
+          "priceInr": 500,
+          "doctorId": "d2",
+          "icon": "droplet",
+          "imageUrl": "https://images.pexels.com/photos/6823510/pexels-photo-6823510.jpeg?auto=compress&cs=tinysrgb&w=480&h=360&fit=crop"
+        },
+        {
+          "id": "svc-child",
+          "name": "Child health visit",
+          "priceInr": 400,
+          "badge": "Kids",
+          "doctorId": "d3",
+          "icon": "smile",
+          "imageUrl": "https://images.pexels.com/photos/7447001/pexels-photo-7447001.jpeg?auto=compress&cs=tinysrgb&w=480&h=360&fit=crop"
+        },
+        {
+          "id": "svc-heart",
+          "name": "Heart check and ECG",
+          "priceInr": 800,
+          "doctorId": "d4",
+          "icon": "heart",
+          "imageUrl": "https://images.pexels.com/photos/5340274/pexels-photo-5340274.jpeg?auto=compress&cs=tinysrgb&w=480&h=360&fit=crop"
+        }
+      ]
+    },
+    {
+      "id": "doctors",
+      "type": "doctor_carousel",
+      "title": "Doctors available today",
+      "background": { "kind": "gradient", "value": "#E3F4F0,#F5F9F8" },
+      "items": [
+        {
+          "id": "d1",
+          "photoUrl": "https://images.pexels.com/photos/6749777/pexels-photo-6749777.jpeg?auto=compress&cs=tinysrgb&w=240&h=240&fit=crop&crop=top",
+          "name": "Dr. Lakshmi Reddy",
+          "specialty": "General Physician",
+          "feeInr": 300
+        },
+        {
+          "id": "d2",
+          "photoUrl": "https://images.pexels.com/photos/4989168/pexels-photo-4989168.jpeg?auto=compress&cs=tinysrgb&w=240&h=240&fit=crop&crop=top",
+          "name": "Dr. Arjun Rao",
+          "specialty": "Diabetologist",
+          "feeInr": 500
+        },
+        {
+          "id": "d3",
+          "photoUrl": "https://images.pexels.com/photos/7904406/pexels-photo-7904406.jpeg?auto=compress&cs=tinysrgb&w=240&h=240&fit=crop&crop=top",
+          "name": "Dr. Sneha Kulkarni",
+          "specialty": "Paediatrician",
+          "feeInr": 400
+        },
+        {
+          "id": "d4",
+          "photoUrl": "https://images.pexels.com/photos/19438563/pexels-photo-19438563.jpeg?auto=compress&cs=tinysrgb&w=240&h=240&fit=crop&crop=top",
+          "name": "Dr. Venkat Subramanyam",
+          "specialty": "Cardiologist",
+          "feeInr": 800
+        }
+      ]
+    },
+    {
+      "id": "offer-clinic",
+      "type": "offer_strip",
+      "background": { "kind": "color", "value": "#0A6B63" },
+      "items": [
+        {
+          "icon": "gift",
+          "message": "Refer a family member and get ₹100 off on your next visit"
+        }
+      ]
+    }
+  ]
+}
